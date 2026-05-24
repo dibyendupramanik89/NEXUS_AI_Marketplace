@@ -4,7 +4,7 @@
 
 ### Step 1: Activate Environment
 ```bash
-cd /Users/priyanka-dibyendu/Downloads/nexus_ai_marketplace
+cd <your path>/nexus_ai_marketplace
 source .venv/bin/activate
 ```
 
