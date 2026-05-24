@@ -119,24 +119,6 @@ User Query: "I want to buy a flat 1500sq feet in varthur bangalore"
 | Learning Agent | Courses, tutorials, certs | Topic + skill level + format | Free/paid tagging |
 | General Agent | Everything else | Broad intent | Relevance ranking |
 
----
-
-## 💰 Business Model (B2B2C)
-
-```
-Brands/Advertisers ──CPM Bid──► PAX Auction Engine
-                                        │
-                                   NEXUS takes 30%
-                                        │
-                               ◄────────┘
-Platform sells to: Google, Meta, Claude, Flipkart as AI search layer
-```
-
-**Revenue streams:**
-1. **CPM Auction Revenue** — brands pay per 1000 impressions of their ad
-2. **API Licensing** — sell NEXUS as middleware to e-commerce platforms
-3. **SaaS Dashboard** — brands manage bids via NEXUS console
-4. **Data Intelligence** — anonymized intent analytics (privacy-safe)
 
 ---
 
