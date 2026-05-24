@@ -1,0 +1,41 @@
+# NEXUS AI Marketplace – Python Dependencies
+# Install: pip install -r requirements.txt
+# 
+# Supports multiple LLM backends:
+#   • Cloud APIs: Claude (Anthropic), Gemini (Google)
+#   • Local Inference: Ollama (recommended for privacy & offline)
+#   • Fallback: Deterministic mode (no LLM required)
+
+# Install: pip install -r requirements.txt
+
+# ── LangChain Framework
+langchain-core>=0.3.0
+langgraph>=0.2.0
+
+# ── LLM Providers (install at least one)
+langchain-anthropic>=0.3.0        # Claude (primary)
+langchain-google-genai>=2.0.0     # Gemini (fallback)
+langchain-ollama>=0.1.0           # Ollama (local models) - NEW
+
+# ── Free Web Search (no API key needed)
+duckduckgo-search>=6.0.0
+
+# ── UI
+gradio>=4.0.0
+
+# ── Data Validation
+pydantic>=2.0.0
+typing-extensions>=4.0.0
+
+# ── Environment
+python-dotenv>=1.0.0
+
+# ── Async
+aiohttp>=3.9.0
+
+# ── HTTP requests (for Ollama availability check)
+requests>=2.31.0
+
+# ── Dev / Test
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
