@@ -174,6 +174,26 @@ cp .env.example .env
 # ANTHROPIC_API_KEY=sk-ant-...   (Claude - recommended)
 # GEMINI_API_KEY=...             (Gemini - alternative)
 # No key = deterministic fallback mode (still works!)
+# I have used Ollama model
+### 4. Install Ollama Models
+```
+```bash
+# Install Ollama
+# Mac:   brew install ollama
+# Linux: curl -fsSL https://ollama.com/install.sh | sh
+# Win:   https://ollama.com/download
+
+# Start Ollama
+ollama serve
+
+# Pull primary model (9.6GB — best quality, Google Gemma 4)
+ollama pull gemma4:e4b
+
+# Pull fallback model (2.7GB — fast & lightweight)
+ollama pull qwen3.5:2b
+
+# Verify
+ollama list
 ```
 
 ### 3. Run
