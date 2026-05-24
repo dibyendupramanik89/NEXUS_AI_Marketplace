@@ -11,8 +11,6 @@
 # 🧠 NEXUS AI Marketplace
 ## The Programmatic Ad Exchange for the AI Era
 
-> Google earns $0 when users ask ChatGPT commercial questions.
-> NEXUS fixes that.
 
 NEXUS is a real-time auction engine that runs INSIDE
 any LLM conversation pipeline — converting user intent
