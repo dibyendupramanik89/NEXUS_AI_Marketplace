@@ -143,7 +143,7 @@ No API key needed for DuckDuckGo. NEXUS runs fully offline in fallback mode.
 ### 1. Clone & Setup
 
 ```bash
-git clone https://github.com/yourname/nexus-ai-marketplace.git
+git clone https://github.com/dibyendupramanik89/NEXUS_AI_Marketplace.git
 cd nexus-ai-marketplace
 
 python -m venv .venv
