@@ -8,6 +8,10 @@
 
 ---
 
+<img width="933" height="743" alt="image" src="https://github.com/user-attachments/assets/fb784a96-de7c-46a3-8376-0a0c0f9c927d" />
+
+
+
 # 🧠 NEXUS AI Marketplace
 ## The Programmatic Ad Exchange for the AI Era
 
