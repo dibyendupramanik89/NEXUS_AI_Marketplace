@@ -8,6 +8,27 @@
 
 ---
 
+# 🧠 NEXUS AI Marketplace
+## The Programmatic Ad Exchange for the AI Era
+
+> Google earns $0 when users ask ChatGPT commercial questions.
+> NEXUS fixes that.
+
+NEXUS is a real-time auction engine that runs INSIDE
+any LLM conversation pipeline — converting user intent
+into ad revenue without tracking a single cookie.
+
+### Live Demo Queries
+- "I want a 3BHK flat in Varthur Bangalore"
+- "Blue t-shirt XL under ₹1500"
+- "Medicine for migraine headache"
+- "Learn agentic AI with LangGraph"
+
+### Why This Matters
+- ChatGPT: 10M queries/day → $0 ad revenue
+- Gemini: Billions of queries → $0 from conversations  
+- NEXUS: Every commercial query → Real auction revenue
+
 ## 🚀 What is NEXUS?
 
 NEXUS is an **intent-driven agentic marketplace** that turns any user search query into a monetizable signal — routing it through specialized AI agents, running a real-time programmatic ad auction, performing live web search, and delivering unified **sponsored + organic results** in a single intelligent response.
