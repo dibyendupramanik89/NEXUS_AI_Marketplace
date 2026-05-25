@@ -8,6 +8,10 @@
 
 ---
 
+<img width="933" height="743" alt="image" src="https://github.com/user-attachments/assets/fb784a96-de7c-46a3-8376-0a0c0f9c927d" />
+
+
+
 # 🧠 NEXUS AI Marketplace
 ## The Programmatic Ad Exchange for the AI Era
 
@@ -316,24 +320,6 @@ Unified JSON structure containing:
 | Learning Agent | Courses, tutorials, certs | Topic + skill level + format | Free/paid tagging |
 | General Agent | Everything else | Broad intent | Relevance ranking |
 
----
-
-## 💰 Business Model (B2B2C)
-
-```
-Brands/Advertisers ──CPM Bid──► PAX Auction Engine
-                                        │
-                                   NEXUS takes 30%
-                                        │
-                               ◄────────┘
-Platform sells to: Google, Meta, Claude, Flipkart as AI search layer
-```
-
-**Revenue streams:**
-1. **CPM Auction Revenue** — brands pay per 1000 impressions of their ad
-2. **API Licensing** — sell NEXUS as middleware to e-commerce platforms
-3. **SaaS Dashboard** — brands manage bids via NEXUS console
-4. **Data Intelligence** — anonymized intent analytics (privacy-safe)
 
 ---
 
@@ -354,7 +340,7 @@ No API key needed for DuckDuckGo. NEXUS runs fully offline in fallback mode.
 ### 1. Clone & Setup
 
 ```bash
-git clone https://github.com/yourname/nexus-ai-marketplace.git
+git clone https://github.com/dibyendupramanik89/NEXUS_AI_Marketplace.git
 cd nexus-ai-marketplace
 
 python -m venv .venv
@@ -371,6 +357,26 @@ cp .env.example .env
 # ANTHROPIC_API_KEY=sk-ant-...   (Claude - recommended)
 # GEMINI_API_KEY=...             (Gemini - alternative)
 # No key = deterministic fallback mode (still works!)
+# I have used Ollama model
+### 4. Install Ollama Models
+```
+```bash
+# Install Ollama
+# Mac:   brew install ollama
+# Linux: curl -fsSL https://ollama.com/install.sh | sh
+# Win:   https://ollama.com/download
+
+# Start Ollama
+ollama serve
+
+# Pull primary model (9.6GB — best quality, Google Gemma 4)
+ollama pull gemma4:e4b
+
+# Pull fallback model (2.7GB — fast & lightweight)
+ollama pull qwen3.5:2b
+
+# Verify
+ollama list
 ```
 
 ### 3. Run

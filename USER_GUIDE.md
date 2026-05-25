@@ -51,7 +51,7 @@ The platform is built with **Gradio** (UI), **LangGraph** (workflow orchestratio
 ### Step 1: Clone/Navigate to Project
 
 ```bash
-cd /Users/priyanka-dibyendu/Downloads/nexus_ai_marketplace
+cd <your path>/nexus_ai_marketplace
 ```
 
 ### Step 2: Create Virtual Environment

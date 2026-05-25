@@ -54,10 +54,6 @@ Query Input
 Final Response (Text/JSON/UI)
 ```
 
-**View Diagram:**
-- `ARCHITECTURE_DIAGRAM.svg` (Scalable Vector)
-- `ARCHITECTURE.html` (Interactive)
-
 ---
 
 ## 🎯 UI Tabs
