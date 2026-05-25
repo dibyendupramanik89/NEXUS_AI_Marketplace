@@ -66,75 +66,75 @@ Today people search across Claude, ChatGPT, Gemini for things like:
 
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │ INPUT CHANNELS                          │ API GATEWAY & EDGE                                        │
-├─────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
-│  • Web UI (Gradio Dashboard)           │  • Auth & Validation      • Rate Limiting                │
-│  • CLI Query Mode                      │  • Request Routing        • Trace ID Injection           │
-│  • API Endpoint (Future)               │  • User Session Mgmt      • Request Timeout              │
-└─────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+├─────────────────────────────────────────┼─────────────────────────────────────────────────────────  ┤
+│  • Web UI (Gradio Dashboard)            │  • Auth & Validation      • Rate Limiting                 │
+│  • CLI Query Mode                       │  • Request Routing        • Trace ID Injection            │
+│  • API Endpoint (Future)                │  • User Session Mgmt      • Request Timeout               │
+└─────────────────────────────────────────┴─────────────────────────────────────────────────────────  ┘
                                                           │
                                                           ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ INPUT GUARDRAILS (6 Checks)                                                                        │
+│ INPUT GUARDRAILS (6 Checks)                                                                         │
 ├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  ✓ PII Detection & Masking  ✓ Toxicity & Safety Filter  ✓ Query Validation                        │
-│  ✓ Budget Sanity Check      ✓ Category Whitelist        ✓ Policy Enforcement                      │
+│  ✓ PII Detection & Masking  ✓ Toxicity & Safety Filter  ✓ Query Validation                          │
+│  ✓ Budget Sanity Check      ✓ Category Whitelist        ✓ Policy Enforcement                        │
 └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
                                                           │
                                                           ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                    AGENT ORCHESTRATOR / SUPERVISOR (The Brain)                                     │
-│  🧠 Central Command: Intent Extraction • Privacy Engine • Routing Logic • Request Decomposition    │
-├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  ┌─────────────────┐  ┌──────────────────┐  ┌──────────────┐  ┌────────────────┐  ┌────────────┐ │
-│  │ Intent          │  │ Privacy Engine   │  │ Routing      │  │ Request        │  │ Policy &   │ │
-│  │ Classification  │  │ (PII Scrubbing)  │  │ Logic        │  │ Decomposition  │  │ Action     │ │
-│  │ (LLM/Heuristic) │  │ Token Creation   │  │ (Multi-Path) │  │ (Parallel)     │  │ Rules      │ │
-│  └─────────────────┘  └──────────────────┘  └──────────────┘  └────────────────┘  └────────────┘ │
+│                    AGENT ORCHESTRATOR / SUPERVISOR (The Brain)                                      │
+│  🧠 Central Command: Intent Extraction • Privacy Engine • Routing Logic • Request Decomposition     │
+├──────────────────────────────────────────────────────────────────────────────────────────────────── ┤ 
+│  ┌─────────────────┐  ┌──────────────────┐  ┌──────────────┐  ┌────────────────┐  ┌────────────┐    │
+│  │ Intent          │  │ Privacy Engine   │  │ Routing      │  │ Request        │  │ Policy &   │    │
+│  │ Classification  │  │ (PII Scrubbing)  │  │ Logic        │  │ Decomposition  │  │ Action     │    │
+│  │ (LLM/Heuristic) │  │ Token Creation   │  │ (Multi-Path) │  │ (Parallel)     │  │ Rules      │    │
+│  └─────────────────┘  └──────────────────┘  └──────────────┘  └────────────────┘  └────────────┘    │
 └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
                   │                                                                  │
         ┌─────────┘                                                                  └──────────┐
-        ▼                                                                                     ▼
+        ▼                                                                                       ▼
 ┌──────────────────────────────────────────┐              ┌──────────────────────────────────────────┐
 │  ⚡ PAX AUCTION PATH                      │              │  🤖 DOMAIN AGENTS PATH                   │
 ├──────────────────────────────────────────┤              ├──────────────────────────────────────────┤
-│  • 2nd-Price Auction Engine             │              │  • Fashion Specialist Agent              │
-│  • Real-time Bidding Pool               │              │  • Real Estate Specialist Agent          │
-│  • Budget Adjustment & Verification     │              │  • Medical Specialist Agent              │
-│  • Winner Selection (~15-30ms)          │              │  • Learning & Ed-Tech Agent              │
-│  • Inventory Checks (RERA, Active)      │              │  • General Search Agent                  │
-│                                         │              │  • DuckDuckGo Web Search (FREE)          │
+│  • 2nd-Price Auction Engine              │              │  • Fashion Specialist Agent              │
+│  • Real-time Bidding Pool                │              │  • Real Estate Specialist Agent          │
+│  • Budget Adjustment & Verification      │              │  • Medical Specialist Agent              │
+│  • Winner Selection (~15-30ms)           │              │  • Learning & Ed-Tech Agent              │
+│  • Inventory Checks (RERA, Active)       │              │  • General Search Agent                  │
+│                                          │              │  • DuckDuckGo Web Search (FREE)          │
 └──────────────────────────────────────────┘              └──────────────────────────────────────────┘
         │                                                          │
         └──────────────────────────┬─────────────────────────────┘
                                    ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ TOOLS & ENTERPRISE SYSTEMS                                                                        │
+│ TOOLS & ENTERPRISE SYSTEMS                                                                          │
 ├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  • Web Search (DuckDuckGo)  • Vector DB Simulation  • LLM APIs (Claude/Gemini)                    │
-│  • Verification Engines    • Privacy Checks        • Memory Store                                 │
+│  • Web Search (DuckDuckGo)  • Vector DB Simulation  • LLM APIs (Claude/Gemini)                      │
+│  • Verification Engines    • Privacy Checks        • Memory Store                                   │
 └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
                                                           │
                                                           ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ OUTPUT GUARDRAILS (6 Checks)                                                                       │
+│ OUTPUT GUARDRAILS (6 Checks)                                                                        │
 ├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  ✓ Response Validation  ✓ PII Redaction  ✓ Audit Trail Logging  ✓ Cost Aggregation                │
-│  ✓ Quality Scoring      ✓ Bias Detection                                                          │
+│  ✓ Response Validation  ✓ PII Redaction  ✓ Audit Trail Logging  ✓ Cost Aggregation                  │
+│  ✓ Quality Scoring      ✓ Bias Detection                                                            │
 └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
                                                           │
                                                           ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ HUMAN-IN-THE-LOOP (Escalation on High-Cost / Ambiguous)                                            │
+│ HUMAN-IN-THE-LOOP (Escalation on High-Cost / Ambiguous)                                             │
 ├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  Agent Suggests Action  →  Human Review & Approval  →  Feedback Capture  →  Policy Update        │
+│  Agent Suggests Action  →  Human Review & Approval  →  Feedback Capture  →  Policy Update           │
 └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
                                                           │
                                                           ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ FINAL RESPONSE TO USER                                                                             │
+│ FINAL RESPONSE TO USER                                                                              │
 ├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│  • JSON Structured Result  • Winning Sponsored Ad  • Organic Results  • Metrics & Traces         │
-│  • Cost Breakdown          • Audit Log & Reasoning                                                │
+│  • JSON Structured Result  • Winning Sponsored Ad  • Organic Results  • Metrics & Traces            │ 
+│  • Cost Breakdown          • Audit Log & Reasoning                                                  │
 └─────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────┐  ┌──────────────────────┐  ┌──────────────────────────────────┐
