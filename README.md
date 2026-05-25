@@ -52,7 +52,104 @@ Today people search across Claude, ChatGPT, Gemini for things like:
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Enterprise Agentic AI Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                  NEXUS AI MARKETPLACE — ENTERPRISE AGENTIC PLATFORM                                 │
+│            Intent-Based • Auction-Driven • Privacy-First • Observable & Auditable                   │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ INPUT CHANNELS                          │ API GATEWAY & EDGE                                        │
+├─────────────────────────────────────────┼─────────────────────────────────────────────────────────┤
+│  • Web UI (Gradio Dashboard)           │  • Auth & Validation      • Rate Limiting                │
+│  • CLI Query Mode                      │  • Request Routing        • Trace ID Injection           │
+│  • API Endpoint (Future)               │  • User Session Mgmt      • Request Timeout              │
+└─────────────────────────────────────────┴─────────────────────────────────────────────────────────┘
+                                                          │
+                                                          ▼
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ INPUT GUARDRAILS (6 Checks)                                                                        │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│  ✓ PII Detection & Masking  ✓ Toxicity & Safety Filter  ✓ Query Validation                        │
+│  ✓ Budget Sanity Check      ✓ Category Whitelist        ✓ Policy Enforcement                      │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                                          │
+                                                          ▼
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                    AGENT ORCHESTRATOR / SUPERVISOR (The Brain)                                     │
+│  🧠 Central Command: Intent Extraction • Privacy Engine • Routing Logic • Request Decomposition    │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────┐  ┌──────────────────┐  ┌──────────────┐  ┌────────────────┐  ┌────────────┐ │
+│  │ Intent          │  │ Privacy Engine   │  │ Routing      │  │ Request        │  │ Policy &   │ │
+│  │ Classification  │  │ (PII Scrubbing)  │  │ Logic        │  │ Decomposition  │  │ Action     │ │
+│  │ (LLM/Heuristic) │  │ Token Creation   │  │ (Multi-Path) │  │ (Parallel)     │  │ Rules      │ │
+│  └─────────────────┘  └──────────────────┘  └──────────────┘  └────────────────┘  └────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                  │                                                                  │
+        ┌─────────┘                                                                  └──────────┐
+        ▼                                                                                     ▼
+┌──────────────────────────────────────────┐              ┌──────────────────────────────────────────┐
+│  ⚡ PAX AUCTION PATH                      │              │  🤖 DOMAIN AGENTS PATH                   │
+├──────────────────────────────────────────┤              ├──────────────────────────────────────────┤
+│  • 2nd-Price Auction Engine             │              │  • Fashion Specialist Agent              │
+│  • Real-time Bidding Pool               │              │  • Real Estate Specialist Agent          │
+│  • Budget Adjustment & Verification     │              │  • Medical Specialist Agent              │
+│  • Winner Selection (~15-30ms)          │              │  • Learning & Ed-Tech Agent              │
+│  • Inventory Checks (RERA, Active)      │              │  • General Search Agent                  │
+│                                         │              │  • DuckDuckGo Web Search (FREE)          │
+└──────────────────────────────────────────┘              └──────────────────────────────────────────┘
+        │                                                          │
+        └──────────────────────────┬─────────────────────────────┘
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ TOOLS & ENTERPRISE SYSTEMS                                                                        │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│  • Web Search (DuckDuckGo)  • Vector DB Simulation  • LLM APIs (Claude/Gemini)                    │
+│  • Verification Engines    • Privacy Checks        • Memory Store                                 │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                                          │
+                                                          ▼
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ OUTPUT GUARDRAILS (6 Checks)                                                                       │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│  ✓ Response Validation  ✓ PII Redaction  ✓ Audit Trail Logging  ✓ Cost Aggregation                │
+│  ✓ Quality Scoring      ✓ Bias Detection                                                          │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                                          │
+                                                          ▼
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ HUMAN-IN-THE-LOOP (Escalation on High-Cost / Ambiguous)                                            │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│  Agent Suggests Action  →  Human Review & Approval  →  Feedback Capture  →  Policy Update        │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                                          │
+                                                          ▼
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ FINAL RESPONSE TO USER                                                                             │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│  • JSON Structured Result  • Winning Sponsored Ad  • Organic Results  • Metrics & Traces         │
+│  • Cost Breakdown          • Audit Log & Reasoning                                                │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────┐  ┌──────────────────────┐  ┌──────────────────────────────────┐
+│  GLOBAL SHARED MEMORY           │  │  OBSERVABILITY       │  │  GOVERNANCE & SECURITY           │
+├─────────────────────────────────┤  ├──────────────────────┤  ├──────────────────────────────────┤
+│  • Session Memory               │  │  • Distributed       │  │  • RBAC & Approval Workflows     │
+│  • Long-Term Memory             │  │    Tracing           │  │  • Data Encryption (TLS/E2E)     │
+│  • User Profile (Non-PII)       │  │  • Metrics           │  │  • Audit Trail (Immutable)       │
+│  • Context Retrieval            │  │  • Latency Tracking  │  │  • Policy Engine & Rules         │
+│  • State Management             │  │  • Cost Tracking     │  │  • Compliance (GDPR/CCPA)        │
+│                                 │  │  • Anomaly Detection │  │  • Rate Limiting & Quotas        │
+└─────────────────────────────────┘  └──────────────────────┘  └──────────────────────────────────┘
+
+KEY DESIGN PRINCIPLES:
+  ✓ Intent-Based Routing        ✓ Privacy-First (Ephemeral Tokens)   ✓ Dual Execution (Auction + Search)
+  ✓ Observable & Auditable      ✓ Scalable & Extensible              ✓ Multi-LLM Support (Claude/Gemini)
+```
+
+### Simple End-to-End Flow
 
 ```
 User Query: "I want to buy a flat 1500sq feet in varthur bangalore"
@@ -89,6 +186,106 @@ User Query: "I want to buy a flat 1500sq feet in varthur bangalore"
                       ▼
            ✅ Unified User Response
 ```
+
+---
+
+## 🔧 Architecture Components Deep Dive
+
+### **Input Layer**
+- **Web UI**: Enterprise Gradio dashboard with real-time pipeline visualization
+- **CLI Mode**: Single-query command-line interface for quick testing
+- **API Endpoint**: RESTful endpoint for embedding NEXUS into third-party platforms
+
+### **API Gateway & Edge**
+- **Authentication & Validation**: OAuth2-ready, rate limiting per user/API key
+- **Request Tracing**: Every request gets a unique trace ID for observability
+- **Session Management**: Maintains user context across multiple queries
+
+### **Input Guardrails** (Defense-in-Depth)
+1. **PII Detection & Masking** — Detects names, emails, phone numbers; masks before processing
+2. **Toxicity & Safety Filter** — Blocks harmful queries using ML classifiers
+3. **Query Validation** — Format checking, length limits, character set validation
+4. **Budget Sanity Check** — Rejects unrealistic budget constraints (e.g., -₹100)
+5. **Category Whitelist** — Prevents queries for restricted categories (if configured)
+6. **Policy Enforcement** — Custom business rules (geo-blocking, time-based rules, etc.)
+
+### **Agent Orchestrator/Supervisor** (The Brain)
+- **Intent Classification**: Uses LLM (Claude/Gemini) or deterministic fallback to classify user intent into Fashion, Real Estate, Medical, Learning, or General
+- **Privacy Engine**: Scrubs PII and creates ephemeral tokens containing only intent metadata (category, budget, geography)
+- **Routing Logic**: Decides whether to invoke PAX Auction Path, Domain Search Path, or both
+- **Request Decomposition**: Breaks complex queries into sub-tasks for parallel execution
+- **Policy & Action Rules**: Applies business rules, escalation thresholds, and approval gates
+
+### **Dual Execution Paths**
+
+#### **Path A: PAX Auction (Real-time Bidding)**
+- Concurrent bidding from all registered advertisers in the relevant category
+- Second-price auction mechanism: winner pays second-highest bid
+- Budget-aware pricing: CPM adjusted based on advertiser constraints
+- ~15-30ms execution time (sub-100ms for guaranteed response)
+- Result: Single **Winning Ad** (verified and formatted for display)
+
+#### **Path B: Domain Specialist Agents + Web Search**
+- Category-specific agents apply domain expertise:
+  - **Fashion Agent**: Filters by color, size, fit, brand reputation
+  - **Real Estate Agent**: Verifies RERA registration, checks locality safety, computes EMI
+  - **Medical Agent**: Flags prescription vs. OTC, checks doctor credentials
+  - **Learning Agent**: Verifies course accreditation, checks instructor reviews
+- Parallel DuckDuckGo web search (free, no API key)
+- Result: 5–10 **Organic Results** (ranked by relevance + domain confidence)
+
+### **Tools & Enterprise Systems**
+- **Web Search**: DuckDuckGo (free, unlimited), Brave Search (paid), Tavily AI (AI-optimized)
+- **Vector Database**: Simulated for demo; can integrate Pinecone/Weaviate/Milvus
+- **LLM APIs**: Claude 3 (Anthropic), Gemini (Google), Ollama (self-hosted)
+- **Verification Engines**: RERA database lookups, brand reputation checks, credential validation
+- **Privacy Checks**: Re-verification of PII masking, encryption audit
+- **Memory Store**: Session context, user preferences, interaction history (encrypted)
+
+### **Output Guardrails** (Final Quality Gates)
+1. **Response Validation** — Checks structure, completeness, formatting
+2. **PII Redaction** — Final pass to ensure no PII leaked into response
+3. **Audit Trail Logging** — Records every step for compliance/debugging
+4. **Cost Aggregation** — Calculates total cost (auction CPM + search cost + processing fee)
+5. **Quality Scoring** — Confidence scores for each result; flags low-confidence results
+6. **Bias Detection** — ML model flags potentially biased recommendations
+
+### **Human-in-the-Loop (HITL)**
+Triggered for:
+- **High-cost transactions** (e.g., real estate deals >₹50L)
+- **Ambiguous intents** (low classification confidence)
+- **Policy violations** (potential fraud signals)
+- **Customer escalations** (user disputes the recommendation)
+
+Flow: Agent Suggests → Human Reviews → Feedback Captured → Policy Updated (continuous learning)
+
+### **Final Response**
+Unified JSON structure containing:
+- **Sponsored Result**: Winning ad with bid price, verification status
+- **Organic Results**: Top 5 domain-verified results with ranking explanation
+- **Metrics**: Latency breakdown, cost, confidence scores
+- **Audit Log**: Full trace of decision-making (for transparency & debugging)
+
+### **Cross-Cutting Concerns**
+
+#### **Global Shared Memory**
+- **Session Memory**: Current conversation context, intermediate results
+- **Long-Term Memory**: User preferences, purchase history (anonymized)
+- **User Profile**: Non-PII behavioral profile for personalization
+- **Context Retrieval**: Vector similarity search for relevant past sessions
+
+#### **Observability**
+- **Distributed Tracing**: Every step instrumented with OpenTelemetry
+- **Metrics**: Latency (p50/p95/p99), cost per request, success rate
+- **Structured Logging**: JSON logs with trace ID correlation
+- **Anomaly Detection**: Auto-alerts on unusual patterns (e.g., 100x cost spike)
+
+#### **Governance & Security**
+- **RBAC**: Role-based access (admin, brand manager, analyst)
+- **Approval Workflows**: Multi-step sign-off for policy changes
+- **Data Encryption**: TLS in-transit, encryption at-rest for sensitive fields
+- **Audit Trail**: Immutable ledger of all state changes (Merkle tree validation)
+- **Compliance**: GDPR-compliant (consent, data retention, deletion)
 
 ---
 
